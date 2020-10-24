@@ -17,7 +17,7 @@ data "aws_ami" "amzn2" {
     values = ["hvm"]
   }
 
-  owners = ["656109587541"] # Canonical
+  owners = ["amazon"]
 }
 
 locals {

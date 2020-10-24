@@ -1,0 +1,25 @@
+#cloud-config
+repo_update: true
+repo_upgrade: all
+
+packages:
+
+- curl
+- git
+- screen
+- nfs-utils
+- amazon-efs-utils
+- jq
+- nmap-ncat
+
+write_files:
+
+- encoding: b64
+  content: ${b64_sample_config}
+  owner: root:root
+  path: ${path_sample_config}
+  permissions: '0644'
+
+runcmd:
+
+- echo "init finished ..."
