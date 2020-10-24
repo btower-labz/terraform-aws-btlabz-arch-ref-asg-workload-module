@@ -1,15 +1,18 @@
 resource aws_autoscaling_group "main" {
-  name             = var.name
-  min_size         = var.asg_min
-  max_size         = var.asg_max
-  desired_capacity = var.asg_desired
-  //health_check_grace_period = 300
-  //health_check_type         = "ELB"
+  name                      = var.name
+  min_size                  = var.asg_min
+  max_size                  = var.asg_max
+  desired_capacity          = var.asg_desired
+  health_check_grace_period = var.ht_grace_period
+  health_check_type         = "ELB"
   launch_template {
     id      = aws_launch_template.main.id
     version = "$Default"
   }
   vpc_zone_identifier = local.subnets
+
+  #termination_policies = ["Default"]
+
   lifecycle {
     ignore_changes = [
       desired_capacity

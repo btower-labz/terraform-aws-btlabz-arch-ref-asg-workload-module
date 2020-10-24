@@ -19,8 +19,8 @@ cd /usr/local/src/
 ls -la
 cd django-dashboard-black
 
-docker-compose -f docker-compose-prod.yml pull
-docker-compose -f docker-compose-prod.yml build
-docker-compose -f docker-compose-prod.yml up -d
+docker-compose -f docker-compose-cloud.yml pull
+docker-compose -f docker-compose-cloud.yml build --parallel
+docker-compose -f docker-compose-cloud.yml up --detach --no-color --force-recreate
 
 log 'Finished ...'

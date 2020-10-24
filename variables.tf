@@ -86,6 +86,12 @@ variable "ht_timeout" {
   default     = 5
 }
 
+variable "ht_grace_period" {
+  description = "Time (in seconds) after instance comes into service before checking health."
+  type        = number
+  default     = 30
+}
+
 variable "tags" {
   description = "Additional tags. E.g. environment, backup tags etc"
   type        = map
