@@ -92,6 +92,11 @@ variable "ht_grace_period" {
   default     = 30
 }
 
+variable "database_secret_arn" {
+  description = "Database access AWS Secret ARN."
+  type        = string
+}
+
 variable "tags" {
   description = "Additional tags. E.g. environment, backup tags etc"
   type        = map

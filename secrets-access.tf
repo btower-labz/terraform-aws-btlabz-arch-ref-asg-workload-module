@@ -5,6 +5,7 @@ data "aws_iam_policy_document" "secrets" {
       "secretsmanager:GetSecretValue"
     ]
     resources = [
+      var.database_secret_arn,
       "arn:aws:secretsmanager:*:*:secret:${var.config_path}/database-*"
     ]
   }
