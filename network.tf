@@ -1,3 +1,8 @@
+variable "subnets" {
+  description = "VPC subnets for workload"
+  type         = list(string)
+}
+
 locals {
   subnets = sort(distinct(compact(var.subnets)))
 }

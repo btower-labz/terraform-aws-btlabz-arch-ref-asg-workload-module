@@ -15,7 +15,9 @@ resource aws_autoscaling_group "main" {
 
   lifecycle {
     ignore_changes = [
-      desired_capacity
+      desired_capacity,
+      # See: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
+      target_group_arns
     ]
   }
 
