@@ -15,9 +15,9 @@ packages:
 write_files:
 
 - encoding: b64
-  content: ${b64_sample_config}
+  content: ${b64_env_cloud_prefix}
   owner: root:root
-  path: ${path_sample_config}
+  path: ${path_env_cloud_prefix}
   permissions: '0644'
 
 runcmd:

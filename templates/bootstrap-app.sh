@@ -19,6 +19,8 @@ cd /usr/local/src/
 ls -la
 cd django-dashboard-black
 
+cat .env-cloud-prefix
+
 docker-compose -f docker-compose-cloud.yml pull
 docker-compose -f docker-compose-cloud.yml build --parallel
 docker-compose -f docker-compose-cloud.yml up --detach --no-color --force-recreate

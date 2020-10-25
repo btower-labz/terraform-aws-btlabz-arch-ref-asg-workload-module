@@ -7,8 +7,10 @@ variable "userdata" {
 // Instance runtime configuration files
 
 locals {
-  sample_config = templatefile("${path.module}/templates/sample.config", {
-    foo = "bar"
+  env_cloud_prefix = templatefile("${path.module}/templates/.env-cloud-prefix", {
+    prefix = "/dev"
+    # TODO: HardCode
+    region = "eu-west-1"
   })
 }
 
@@ -16,8 +18,8 @@ locals {
 
 locals {
   cloud_init = templatefile("${path.module}/templates/cloud-init.yml", {
-    b64_sample_config  = "${base64encode(local.sample_config)}",
-    path_sample_config = "/etc/sample.config"
+    b64_env_cloud_prefix  = "${base64encode(local.env_cloud_prefix)}",
+    path_env_cloud_prefix = "/usr/local/src/django-dashboard-black/.env-cloud-prefix"
   })
 }
 
