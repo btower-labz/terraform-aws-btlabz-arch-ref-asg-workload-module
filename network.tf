@@ -1,6 +1,6 @@
 variable "subnets" {
   description = "VPC subnets for workload"
-  type         = list(string)
+  type        = list(string)
 }
 
 locals {
