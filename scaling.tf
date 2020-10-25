@@ -1,7 +1,7 @@
 variable "asg_min" {
   description = "Minimum number of instances"
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "asg_desired" {
@@ -13,5 +13,5 @@ variable "asg_desired" {
 variable "asg_max" {
   description = "Maximum number of instances"
   type        = number
-  default     = 3
+  default     = 4
 }
